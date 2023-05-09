@@ -11,7 +11,7 @@ const Shop = () => {
       <Title>Dostupni artikli</Title>
     </TitleWrapper>
     <Category/>
-    <Article components={items1.items1} />
+    <Article components={items1.items1}/>
 
    </div>
   )

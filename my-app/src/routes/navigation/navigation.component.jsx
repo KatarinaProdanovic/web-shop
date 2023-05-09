@@ -29,6 +29,10 @@ const Navigation = () => {
   // ovde dodajte kod za izvršavanje željene akcije
   }
   useEffect(() => {
+    const data = localStorage.getItem('logged')
+    if (!data) {
+      localStorage.setItem('logged', false)
+    }
     setLogg(localStorage.getItem('logged'))
   }, [logg, handleClick])
 

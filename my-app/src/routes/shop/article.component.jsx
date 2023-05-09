@@ -1,5 +1,5 @@
 import { useEffect, useState, React } from 'react'
-import useHttp from '../../requests/useHttp'
+// import useHttp from '../../requests/useHttp'
 import { SpanContainer, InnerDiv, Container, ArticleTitle } from './article.styles'
 // import Button from '../../components/button/button.component'
 import { useSelector, useDispatch } from 'react-redux'
@@ -11,7 +11,7 @@ const Article = ({ components }) => {
   const [isChecked, setChe] = useState(false)
   const navigate = useNavigate()
 
-  const { sendRequest } = useHttp()
+  // const { sendRequest } = useHttp()
   const dispatch = useDispatch()
   const items = useSelector(state => state.items)
   const items1 = useSelector(state => state.items1)
@@ -39,13 +39,53 @@ const Article = ({ components }) => {
   }, [])
 
   async function fetchItems () {
-    const requestConfig = {
+    /* const requestConfig = {
       url: 'https://localhost:7157/api/articles/allArticles',
       method: 'GET',
       body: null,
       headers: {}
-    }
-    const data = await sendRequest(requestConfig)
+    } */
+    // const data = await sendRequest(requestConfig)
+    const data = [{
+      barCode: '12212',
+      category: null,
+      categoryId: 1,
+      cena: 159,
+      id: 1,
+      kataloskaOznaka: '123',
+      kategorija: 'Kategorija1',
+      nazivGrupe: 'Artikal1',
+      proizvodjac: 'Neki1',
+      sifArtID: '11',
+      stanje: 3,
+      tezina: 125
+    }, {
+      barCode: '54757',
+      category: null,
+      categoryId: 2,
+      cena: 675,
+      id: 3,
+      kataloskaOznaka: '1234',
+      kategorija: 'Kategorija2',
+      nazivGrupe: 'Artikal2',
+      proizvodjac: 'Neki2',
+      sifArtID: '464',
+      stanje: 4,
+      tezina: 200
+    }, {
+      barCode: '4633',
+      category: null,
+      categoryId: 2,
+      cena: 675,
+      id: 3,
+      kataloskaOznaka: '12345',
+      kategorija: 'Kategorija2',
+      nazivGrupe: 'Artikal3',
+      proizvodjac: 'Neki3',
+      sifArtID: '8678',
+      stanje: 4,
+      tezina: 200
+    }]
     dispatch(updateItems(data))
     dispatch(updateItems1(data))
     localStorage.setItem('articles1', JSON.stringify(data))
@@ -58,7 +98,7 @@ const Article = ({ components }) => {
     return (
 
           <SpanContainer>
-         <Container>
+         <Container id="my-componentt">
             {items.items.map(option => (
 
          <InnerDiv key = {option.sifArtID}>

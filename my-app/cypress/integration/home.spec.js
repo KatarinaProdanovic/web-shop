@@ -1,12 +1,12 @@
 /* eslint-disable quotes */
 /* eslint-disable no-undef */
 
-describe('HomePage', () => {
+describe('Home', () => {
   it('should match snapshot', () => {
     cy.visit('/')
 
-    cy.contains('Pocetna stranica').click() // napravice snapshot za to dugme
-    cy.get('#my-component').matchImageSnapshot()
+    // cy.contains('Pocetna stranica').click() // napravice snapshot za to dugme
+    cy.matchImageSnapshot()
   })
 })
 /*

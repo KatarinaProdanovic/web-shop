@@ -17,6 +17,6 @@ describe('LoginPage', () => {
     localStorage.setItem('logged', false)
     cy.visit('/login')
 
-    cy.matchImageSnapshot()
+    cy.get('#my-componentt').matchImageSnapshot()
   })
 })

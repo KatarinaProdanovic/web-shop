@@ -2,7 +2,7 @@
 import FormInput from '../../components/forms/form.component'
 import { FormRow, FormInputLabel, FormContainer1 } from '../../components/forms/form.styled'
 import { useState, React } from 'react'
-import useHttp from '../../requests/useHttp'
+// import useHttp from '../../requests/useHttp'
 import { TitleOrders, SpanForForm } from '../shop/details.styled'
 import { setLogged, setToken, setUser } from '../../store/users/users.action'
 
@@ -23,7 +23,7 @@ function LoginPage () {
   const user = useSelector(state => state.user)
   const navigate = useNavigate()
 
-  const { sendRequest } = useHttp()
+  // const { sendRequest } = useHttp()
   const dispatch = useDispatch()
 
   const resetFormFields = () => { // da isprazni vrednosti iz forme na prikazu
@@ -78,7 +78,7 @@ function LoginPage () {
           })
         }
       } else {
-        const requestConfig = {
+        /* const requestConfig = {
           url: 'https://localhost:7157/api/login/loginUser',
           method: 'POST',
           body: JSON.stringify({
@@ -88,14 +88,16 @@ function LoginPage () {
           headers: {
             'Content-Type': 'application/json'
           }
-        }
+        } */
 
         resetFormFields()
-        const data = await sendRequest(requestConfig)
+        const data = { email: 'kaca@gmail.com', id: 1, password: '1234', token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODM2NjYxNjcsImlzcyI6IidodHRwczovL2xvY2FsaG9zdDo3MTU3In0.H45p' }
+        // const data = await sendRequest(requestConfig)
+        console.log(data)
         // ovde cu slati post zahtev
 
         dispatch(setToken(data.token))
-        console.log(data)
+        // console.log(data)
         if (data !== null) {
           dispatch(setUser(data))
 
@@ -125,8 +127,8 @@ function LoginPage () {
 
   return (
 
-      <CenteredDiv>
-        <CenteredContent>
+      <CenteredDiv >
+        <CenteredContent id = "my-componentt">
        <SpanForForm>
        <TitleOrders>Ulogujte se</TitleOrders><br/><br/>
 

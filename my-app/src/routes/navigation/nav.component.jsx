@@ -27,10 +27,10 @@ function DrawerAppBar (props) {
   const dispatch = useDispatch()
   const { window } = props
   const [mobileOpen, setMobileOpen] = useState(false)
-
+  console.log(localStorage.getItem('logged'))
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
-    setLogg(false)
+    // setLogg(false)
   }
   const handleHome = () => {
     navigate('/')
@@ -51,16 +51,19 @@ function DrawerAppBar (props) {
   // ovde dodajte kod za izvršavanje željene akcije
   }
   useEffect(() => {
+    const data = localStorage.getItem('logged')
+    if (!data) {
+      localStorage.setItem('logged', false)
+    }
     setLogg(localStorage.getItem('logged'))
   }, [logg, handleClick])
-
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        SHOP
+        PRODAVNICA
       </Typography>
       <Divider />
-      <List>
+      <List id = 'my_component'>
          <ListItem key={navItems[0]} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               {<ListItemText primary={navItems[0]} onClick={handleHome}/>}
@@ -148,10 +151,6 @@ function DrawerAppBar (props) {
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func
 }
 

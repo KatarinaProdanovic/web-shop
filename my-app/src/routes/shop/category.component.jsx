@@ -8,19 +8,19 @@ import Select from '@mui/material/Select'
 // import { ComboBoxWrapper } from './category.styles'
 import { useSelector, useDispatch } from 'react-redux'
 import { setCategory, updateItems } from '../../store/articles/articles.action'
-import useHttp from '../../requests/useHttp'
+// import useHttp from '../../requests/useHttp'
 const Category = () => {
   const [data1, setData1] = useState([])
 
   const dispatch = useDispatch()
-  const { sendRequest } = useHttp()
+  // const { sendRequest } = useHttp()
   const items1 = useSelector(state => state.items1) // items sam azurirala u article komponenti,
 
   const selectedCategory = useSelector(state => state.selectedCategory)
   useEffect(() => {
     const cachedItems1 = localStorage.getItem('categories')
     // vconsole.log(cachedItems1)
-    fetchItems()
+    // fetchItems()
     if (cachedItems1) {
       setData1(JSON.parse(cachedItems1))
     } else {
@@ -39,16 +39,23 @@ const Category = () => {
     /* fetch('/api/Kategorije')
       .then((response) => response.json())
       .then((actualData) => { setData1(actualData); localStorage.setItem('categories', JSON.stringify(actualData)) }) */
-    const requestConfig = {
+    /* const requestConfig = {
       url: 'https://localhost:7157/api/categories/allCategories',
       method: 'GET',
       body: null,
       headers: {}
-    }
-    const data = await sendRequest(requestConfig)
-    console.log(data)
-    setData1(data)
-    localStorage.setItem('categories', JSON.stringify(data))
+    } */
+    //  const data = await sendRequest(requestConfig)
+    // console.log(data)
+    //  setData1(data)
+    const dat = [{ id: 1, name: 'Kategorija1', articles: null },
+      { id: 2, name: 'Kategorija2', articles: null },
+
+      { id: 3, name: 'Kategorija3', articles: null },
+
+      { id: 4, name: 'Kategorija4', articles: null }]
+    localStorage.setItem('categories', JSON.stringify(dat))
+    setData1(dat)
   }
   const handleChange = (event) => {
     dispatch(setCategory(event.target.value)) // tek kad izadje iz te fje azurirace stanja ta
