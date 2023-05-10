@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Select = styled.select`
   display: block;
-  width: 70%;
+  width: 100%;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 400;

@@ -111,7 +111,7 @@ function Order () {
       console.log('failed', error)
     }
   };
-  const handleChange = (event) => { // ovde ce da cuva unete vrednosti za svako polje
+  const handleChange = (event) => {
     const { name, value } = event.target
     setFormFields({ ...formFields, [name]: value })
   }

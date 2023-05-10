@@ -5,7 +5,7 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 15vh;
+  height: 30vh;
   @media (max-width: 768px) {
     height: auto;
     padding-top: 50px;

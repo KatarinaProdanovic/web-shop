@@ -6,6 +6,3 @@ const Button = ({ children, buttonType, ...otherProps }) => {
 }
 
 export default Button
-// https://dev.to/carloscne/creating-responsive-and-adaptive-layouts-with-react-and-styled-components-1ghi
-// https://www.youtube.com/watch?v=53i9EHsJGxw
-// https://mui.com/material-ui/react-list/

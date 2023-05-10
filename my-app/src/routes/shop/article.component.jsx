@@ -17,11 +17,6 @@ const Article = ({ components }) => {
   const items1 = useSelector(state => state.items1)
   useEffect(() => {
     const cachedItems = localStorage.getItem('articles1')
-    // const json = JSON.parse(cachedItems)
-    // console.log(json[0].id)
-    // console.log(items1)
-    // const niz = cachedItems.split('{')
-    // fetchItems()
     if (isChecked === false) {
       if (cachedItems) {
         dispatch(updateItems(JSON.parse(cachedItems)))
@@ -46,7 +41,7 @@ const Article = ({ components }) => {
       headers: {}
     } */
     // const data = await sendRequest(requestConfig)
-    const data = [{
+    const mockData = [{
       barCode: '12212',
       category: null,
       categoryId: 1,
@@ -86,13 +81,11 @@ const Article = ({ components }) => {
       stanje: 4,
       tezina: 200
     }]
-    dispatch(updateItems(data))
-    dispatch(updateItems1(data))
-    localStorage.setItem('articles1', JSON.stringify(data))
+    dispatch(updateItems(mockData))
+    dispatch(updateItems1(mockData))
+    localStorage.setItem('articles1', JSON.stringify(mockData))
     setChe(true)
-    // console.log(data.length)
   }
-  console.log('evo ih nizovi')
 
   if (items1.items1 !== undefined && items1.items1.length > 0 && items.items !== undefined && items.items.length > 0) {
     return (

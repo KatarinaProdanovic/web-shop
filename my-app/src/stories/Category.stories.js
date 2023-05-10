@@ -6,4 +6,4 @@ export default {
   component: Category
 }
 
-export const Default = () => <Category id="my-component5"/>
+export const Default = () => <Category/>

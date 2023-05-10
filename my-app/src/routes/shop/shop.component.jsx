@@ -8,11 +8,12 @@ const Shop = () => {
   return (
     <div>
       <TitleWrapper>
+        <div>
       <Title>Dostupni artikli</Title>
+      <Category/>
+      </div>
     </TitleWrapper>
-    <Category/>
     <Article components={items1.items1}/>
-
    </div>
   )
 }

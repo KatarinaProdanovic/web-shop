@@ -14,25 +14,16 @@ const Category = () => {
 
   const dispatch = useDispatch()
   // const { sendRequest } = useHttp()
-  const items1 = useSelector(state => state.items1) // items sam azurirala u article komponenti,
+  const items1 = useSelector(state => state.items1)
 
   const selectedCategory = useSelector(state => state.selectedCategory)
   useEffect(() => {
     const cachedItems1 = localStorage.getItem('categories')
-    // vconsole.log(cachedItems1)
-    // fetchItems()
     if (cachedItems1) {
       setData1(JSON.parse(cachedItems1))
     } else {
       fetchItems()
     }
-    /*
-       if(isChecked === false){
-        fetch('/api/Kategorije')
-        .then((response) => response.json())
-        .then((actualData) => setData1(actualData));
-        setChe(true)
-          } */
   }, [])
 
   async function fetchItems () {
@@ -48,17 +39,17 @@ const Category = () => {
     //  const data = await sendRequest(requestConfig)
     // console.log(data)
     //  setData1(data)
-    const dat = [{ id: 1, name: 'Kategorija1', articles: null },
+    const mockData = [{ id: 1, name: 'Kategorija1', articles: null },
       { id: 2, name: 'Kategorija2', articles: null },
 
       { id: 3, name: 'Kategorija3', articles: null },
 
       { id: 4, name: 'Kategorija4', articles: null }]
-    localStorage.setItem('categories', JSON.stringify(dat))
-    setData1(dat)
+    localStorage.setItem('categories', JSON.stringify(mockData))
+    setData1(mockData)
   }
   const handleChange = (event) => {
-    dispatch(setCategory(event.target.value)) // tek kad izadje iz te fje azurirace stanja ta
+    dispatch(setCategory(event.target.value))
 
     const countryToSearch = event.target.value
     const br = Number(countryToSearch)
@@ -87,7 +78,7 @@ const Category = () => {
          </ComboBoxWrapper>
          */
          <Box sx={{ minWidth: 200 }}>
-         <FormControl size='18px'>
+         <FormControl size='20px'>
            <InputLabel id="demo-simple-select-label">Kategorija</InputLabel>
            <Select
              labelId="demo-simple-select-label"

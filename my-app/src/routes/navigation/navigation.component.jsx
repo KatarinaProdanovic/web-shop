@@ -40,7 +40,7 @@ const Navigation = () => {
     <Grid container justifyContent="center">
     <Box sx={{
       pb: 2,
-      width: '100%', // promenjen properti width na 100%
+      width: '100%',
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'center',

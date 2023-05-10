@@ -48,7 +48,6 @@ function DrawerAppBar (props) {
     localStorage.setItem('logged', false)
     setLogg(localStorage.getItem('logged'))
     navigate('/')
-  // ovde dodajte kod za izvršavanje željene akcije
   }
   useEffect(() => {
     const data = localStorage.getItem('logged')
@@ -111,7 +110,7 @@ function DrawerAppBar (props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            SHOP
+            PRODAVNICA
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               <Button key={navItems[0]} sx={{ color: '#fff' }} onClick={handleHome}>

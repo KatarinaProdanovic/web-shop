@@ -26,7 +26,7 @@ function LoginPage () {
   // const { sendRequest } = useHttp()
   const dispatch = useDispatch()
 
-  const resetFormFields = () => { // da isprazni vrednosti iz forme na prikazu
+  const resetFormFields = () => {
     setFormFields(defaultFormFields)
   }
   async function submitHandler (event) {
@@ -94,10 +94,7 @@ function LoginPage () {
         const data = { email: 'kaca@gmail.com', id: 1, password: '1234', token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODM2NjYxNjcsImlzcyI6IidodHRwczovL2xvY2FsaG9zdDo3MTU3In0.H45p' }
         // const data = await sendRequest(requestConfig)
         console.log(data)
-        // ovde cu slati post zahtev
-
         dispatch(setToken(data.token))
-        // console.log(data)
         if (data !== null) {
           dispatch(setUser(data))
 
@@ -119,7 +116,7 @@ function LoginPage () {
       })
     }
   };
-  const handleChange = (event) => { // ovde ce da cuva unete vrednosti za svako polje
+  const handleChange = (event) => {
     const { name, value } = event.target
 
     setFormFields({ ...formFields, [name]: value })

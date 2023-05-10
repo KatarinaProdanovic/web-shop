@@ -7,6 +7,7 @@ const config = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
     '@storybook/addon-actions',
+    '@storybook/addon-storyshots'
   ],
   framework: {
     name: "@storybook/react-webpack5",

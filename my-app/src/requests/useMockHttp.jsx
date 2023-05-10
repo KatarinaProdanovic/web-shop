@@ -7,7 +7,6 @@ function useMockHttp () {
   const sendRequest = async (config) => {
     setIsLoading(true)
 
-    // simulirajte kašnjenje od 1 sekunde da biste dobili osećaj čekanja
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     const response = {

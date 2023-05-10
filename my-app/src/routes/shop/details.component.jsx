@@ -22,7 +22,7 @@ function Details () {
   }
   const { id } = useParams() // Parametri iz URL-a
   console.log(id)
-  const component = useComponentById(id) // Funkcija za dohvatanje detalja
+  const component = useComponentById(id)
 
   return (
 
