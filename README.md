@@ -2,7 +2,7 @@
 This is a web shop application that allows users to browse available items, search for items by category, view details about them, and if they wish, order a particular item by entering user and order information. There is also an option for user login, where if the user is logged in, they only need to enter order information.
 
 # Deployment
-This application is available on Netlify ([https://web-shopp.netlify.app](https://web-shopp.netlify.app))
+This application is available on Netlify ([https://webb-shopp.netlify.app](https://webb-shopp.netlify.app))
 
 # Tech Stack 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using [Redux](https://redux.js.org). For handling UI the [Material UI](https://mui.com) was used. For testing was used [Cypress](https://www.cypress.io), as well as [Storybook](https://storybook.js.org) and [Storyshots](https://storybook.js.org/addons/@storybook/addon-storyshots).
